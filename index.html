@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090908">
+  <meta name="description" content="GUSSMANI — perfumería de autor. Esencias creadas para dejar huella.">
+  <title>GUSSMANI — El arte de dejar huella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#inicio" aria-label="Gussmani, inicio">GUSSMANI<span>®</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#coleccion">Colección</a>
+      <a href="#universo">Nuestro universo</a>
+      <a href="#ritual">El ritual</a>
+    </nav>
+    <a class="bag-link" href="#coleccion" aria-label="Bolsa de compras">
+      Bolsa <span class="bag-count" aria-live="polite">0</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Perfumería de autor · Desde 1987</p>
+        <h1 id="hero-title">El arte de<br>dejar <em>huella.</em></h1>
+        <p class="hero-description">Hay aromas que se olvidan.<br>Y otros que se convierten en parte de ti.</p>
+        <a class="text-link" href="#coleccion">Descubre la colección <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="hero-art" aria-label="Frasco de perfume Gussmani rodeado de humo">
+        <div class="smoke smoke-one" aria-hidden="true"></div>
+        <div class="smoke smoke-two" aria-hidden="true"></div>
+        <div class="smoke smoke-three" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-bottle bottle-animate" aria-hidden="true">
+          <div class="bottle-cap"><span></span></div>
+          <div class="bottle-neck"></div>
+          <div class="bottle-body">
+            <div class="bottle-reflection"></div>
+            <div class="bottle-label">
+              <span class="label-mark">G</span>
+              <span class="label-name">GUSSMANI</span>
+              <span class="label-fragrance">NOIR ABSOLU</span>
+              <span class="label-detail">EAU DE PARFUM · 100 ML</span>
+            </div>
+            <div class="bottle-base"></div>
+          </div>
+        </div>
+        <div class="hero-product-note"><span>01 / 03</span><span>NOIR ABSOLU</span></div>
+      </div>
+
+      <div class="hero-aside">
+        <span>EXTRAIT DE PARFUM</span>
+        <span class="aside-rule"></span>
+        <span>HECHO PARA PERDURAR</span>
+      </div>
+      <a class="scroll-cue" href="#coleccion"><span></span> Desliza para descubrir</a>
+    </section>
+
+    <section class="collection section-wrap" id="coleccion" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Selección Gussmani</p>
+          <h2 id="collection-title">Una firma.<br><em>Infinitas maneras</em> de sentir.</h2>
+        </div>
+        <p class="section-intro">Composiciones hechas sin prisa, con ingredientes excepcionales y una sola intención: que cada aroma cuente algo de ti.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <a class="product-visual visual-noir" href="#ritual" aria-label="Conoce Noir Absolu">
+            <span class="product-badge">BEST SELLER</span>
+            <div class="mini-bottle mini-noir" aria-hidden="true"><span class="mini-cap"></span><span class="mini-label">G<br><small>NOIR</small></span></div>
+            <span class="visual-caption">01 — AMADERADO · ESPECIADO</span>
+          </a>
+          <div class="product-info"><div><h3>Noir Absolu</h3><p>Ámbar · Cedro · Vainilla</p></div><span class="product-price">$2,450</span></div>
+          <button class="add-button" type="button" data-product="Noir Absolu">Añadir a la bolsa <span aria-hidden="true">+</span></button>
+        </article>
+
+        <article class="product-card">
+          <a class="product-visual visual-rose" href="#ritual" aria-label="Conoce Rose Éternelle">
+            <div class="mini-bottle mini-rose" aria-hidden="true"><span class="mini-cap"></span><span class="mini-label">G<br><small>ROSE</small></span></div>
+            <span class="visual-caption">02 — FLORAL · LUMINOSO</span>
+          </a>
+          <div class="product-info"><div><h3>Rose Éternelle</h3><p>Rosa de Grasse · Almizcle</p></div><span class="product-price">$2,650</span></div>
+          <button class="add-button" type="button" data-product="Rose Éternelle">Añadir a la bolsa <span aria-hidden="true">+</span></button>
+        </article>
+
+        <article class="product-card">
+          <a class="product-visual visual-oud" href="#ritual" aria-label="Conoce Oud Sauvage">
+            <div class="mini-bottle mini-oud" aria-hidden="true"><span class="mini-cap"></span><span class="mini-label">G<br><small>OUD</small></span></div>
+            <span class="visual-caption">03 — ORIENTAL · INTENSO</span>
+          </a>
+          <div class="product-info"><div><h3>Oud Sauvage</h3><p>Oud · Azafrán · Incienso</p></div><span class="product-price">$2,850</span></div>
+          <button class="add-button" type="button" data-product="Oud Sauvage">Añadir a la bolsa <span aria-hidden="true">+</span></button>
+        </article>
+      </div>
+      <a class="all-products-link" href="#ritual">Explorar todos los aromas <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="manifesto" id="universo" aria-labelledby="manifesto-title">
+      <div class="manifesto-image" role="img" aria-label="Luz dorada y sombras evocadoras"></div>
+      <div class="manifesto-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Nuestra esencia</p>
+        <h2 id="manifesto-title">No creamos perfumes.<br><em>Creamos recuerdos.</em></h2>
+        <p>Cada esencia nace de una búsqueda: encontrar ese instante que quisieras volver a vivir. Materias primas extraordinarias, un oficio que se transmite y el tiempo necesario para hacerlo bien.</p>
+        <a class="text-link" href="#ritual">Conoce nuestra historia <span aria-hidden="true">↗</span></a>
+        <span class="manifesto-signature">G.</span>
+      </div>
+    </section>
+
+    <section class="ritual section-wrap" id="ritual">
+      <p class="eyebrow"><span class="eyebrow-line"></span> El ritual Gussmani</p>
+      <h2>Tu piel. Tu historia.<br><em>Tu aroma.</em></h2>
+      <p class="ritual-description">El perfume correcto no se elige. Se reconoce.</p>
+      <a class="button-gold" href="#coleccion">Encuentra el tuyo <span aria-hidden="true">↗</span></a>
+      <div class="ritual-index" aria-hidden="true">G / 1987</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#inicio">GUSSMANI<span>®</span></a>
+    <p>El arte de dejar huella.</p>
+    <div class="footer-bottom"><span>© 2025 Gussmani Parfums</span><span>Creado para perdurar.</span><a href="#inicio">Volver arriba ↑</a></div>
+  </footer>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
