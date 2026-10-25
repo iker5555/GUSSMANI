@@ -21,10 +21,11 @@
       <a href="#coleccion">Colección</a>
       <a href="#universo">Nuestro universo</a>
       <a href="#ritual">El ritual</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-    <a class="bag-link" href="#coleccion" aria-label="Bolsa de compras">
+    <button class="bag-link" type="button" aria-label="Abrir resumen de compra" aria-haspopup="dialog" aria-controls="cart-dialog">
       Bolsa <span class="bag-count" aria-live="polite">0</span>
-    </a>
+    </button>
   </header>
 
   <main>
@@ -84,7 +85,7 @@
             <span class="visual-caption">01 — AMADERADO · ESPECIADO</span>
           </a>
           <div class="product-info"><div><h3>Noir Absolu</h3><p>Ámbar · Cedro · Vainilla</p></div><span class="product-price">$2,450</span></div>
-          <button class="add-button" type="button" data-product="Noir Absolu">Añadir a la bolsa <span aria-hidden="true">+</span></button>
+          <button class="add-button" type="button" data-product="noir-absolu">Añadir a la bolsa <span aria-hidden="true">+</span></button>
         </article>
 
         <article class="product-card">
@@ -93,7 +94,7 @@
             <span class="visual-caption">02 — FLORAL · LUMINOSO</span>
           </a>
           <div class="product-info"><div><h3>Rose Éternelle</h3><p>Rosa de Grasse · Almizcle</p></div><span class="product-price">$2,650</span></div>
-          <button class="add-button" type="button" data-product="Rose Éternelle">Añadir a la bolsa <span aria-hidden="true">+</span></button>
+          <button class="add-button" type="button" data-product="rose-eternelle">Añadir a la bolsa <span aria-hidden="true">+</span></button>
         </article>
 
         <article class="product-card">
@@ -102,7 +103,7 @@
             <span class="visual-caption">03 — ORIENTAL · INTENSO</span>
           </a>
           <div class="product-info"><div><h3>Oud Sauvage</h3><p>Oud · Azafrán · Incienso</p></div><span class="product-price">$2,850</span></div>
-          <button class="add-button" type="button" data-product="Oud Sauvage">Añadir a la bolsa <span aria-hidden="true">+</span></button>
+          <button class="add-button" type="button" data-product="oud-sauvage">Añadir a la bolsa <span aria-hidden="true">+</span></button>
         </article>
       </div>
       <a class="all-products-link" href="#ritual">Explorar todos los aromas <span aria-hidden="true">↗</span></a>
@@ -126,6 +127,15 @@
       <a class="button-gold" href="#coleccion">Encuentra el tuyo <span aria-hidden="true">↗</span></a>
       <div class="ritual-index" aria-hidden="true">G / 1987</div>
     </section>
+
+    <section class="contact-section section-wrap" id="contacto" aria-labelledby="contact-title">
+      <p class="eyebrow"><span class="eyebrow-line"></span> Contacto</p>
+      <h2 id="contact-title">Hablemos de <em>aromas.</em></h2>
+      <p>¿Tienes dudas o quieres encontrar tu próxima esencia? Escríbenos por Instagram; estaremos encantados de ayudarte.</p>
+      <a class="button-gold" href="https://www.instagram.com/guss.mani.perfumeria/" target="_blank" rel="noopener noreferrer">
+        @guss.mani.perfumeria <span aria-hidden="true">↗</span>
+      </a>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -133,6 +143,26 @@
     <p>El arte de dejar huella.</p>
     <div class="footer-bottom"><span>© 2025 Gussmani Parfums</span><span>Creado para perdurar.</span><a href="#inicio">Volver arriba ↑</a></div>
   </footer>
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> Gussmani</p>
+        <h2 id="cart-title">Tu bolsa</h2>
+      </div>
+      <button class="cart-close" type="button" aria-label="Cerrar resumen de compra">×</button>
+    </div>
+    <div class="cart-content">
+      <p class="cart-empty">Tu bolsa está vacía.<br><span>Descubre una esencia para empezar.</span></p>
+      <ul class="cart-items" aria-label="Productos en tu bolsa"></ul>
+    </div>
+    <div class="cart-footer" hidden>
+      <div class="cart-subtotal"><span>Subtotal</span><strong></strong></div>
+      <p class="cart-note">Al escribirnos por Instagram, indícanos los aromas y cantidades de tu bolsa.</p>
+      <a class="button-gold cart-instagram" href="https://www.instagram.com/guss.mani.perfumeria/" target="_blank" rel="noopener noreferrer">
+        Continuar por Instagram <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </dialog>
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
