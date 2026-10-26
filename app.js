@@ -9,17 +9,46 @@ const cartFooter = document.querySelector(".cart-footer");
 const cartSubtotal = document.querySelector(".cart-subtotal strong");
 const cartClose = document.querySelector(".cart-close");
 const heroVideo = document.querySelector(".hero-video");
+const productImage = document.querySelector(".product-image");
+const productCaption = document.querySelector(".product-visual .visual-caption");
 
 const products = {
-  "noir-absolu": { name: "Noir Absolu", notes: "Ámbar · Cedro · Vainilla", price: 2450, style: "mini-noir" },
-  "rose-eternelle": { name: "Rose Éternelle", notes: "Rosa de Grasse · Almizcle", price: 2650, style: "mini-rose" },
-  "oud-sauvage": { name: "Oud Sauvage", notes: "Oud · Azafrán · Incienso", price: 2850, style: "mini-oud" },
+  "guss-mani-parfum": {
+    name: "Guss mani parfum",
+    notes: "Una esencia creada para dejar huella.",
+    price: 2450,
+    image: "imagenes/perfume%201.jpg",
+  },
 };
 const cart = new Map();
 
 if (heroVideo instanceof HTMLVideoElement && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   heroVideo.pause();
 }
+
+document.querySelectorAll(".product-thumbnail").forEach((thumbnail) => {
+  thumbnail.addEventListener("click", () => {
+    const imageIndex = Number(thumbnail.dataset.image);
+    const image = imageIndex === 1
+      ? { src: "imagenes/perfume%202.png", alt: "Guss mani parfum, frasco sobre arena" }
+      : { src: "imagenes/perfume%201.jpg", alt: "Guss mani parfum, frasco negro con detalles dorados" };
+
+    if (productImage instanceof HTMLImageElement && productCaption) {
+      productImage.src = image.src;
+      productImage.alt = image.alt;
+      productCaption.textContent = `FOTO ${imageIndex + 1} DE 2`;
+    }
+
+    products["guss-mani-parfum"].image = image.src;
+    updateCart();
+
+    document.querySelectorAll(".product-thumbnail").forEach((option) => {
+      const isSelected = option === thumbnail;
+      option.classList.toggle("is-selected", isSelected);
+      option.setAttribute("aria-pressed", String(isSelected));
+    });
+  });
+});
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
@@ -62,8 +91,12 @@ function updateCart() {
     item.className = "cart-item";
 
     const visual = document.createElement("span");
-    visual.className = `cart-item-visual ${product.style}`;
+    visual.className = "cart-item-visual";
     visual.setAttribute("aria-hidden", "true");
+    const image = document.createElement("img");
+    image.src = product.image;
+    image.alt = "";
+    visual.append(image);
 
     const details = document.createElement("div");
     details.className = "cart-item-details";
