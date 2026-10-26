@@ -26,10 +26,11 @@ button { color: inherit; font: inherit; }
 .bag-count { width: 20px; height: 20px; border: 1px solid rgba(201,169,110,.6); border-radius: 50%; display: inline-grid; place-items: center; color: var(--gold-light); font-size: 9px; }
 .menu-toggle { display: none; }
 
-.hero { position: relative; min-height: 740px; height: min(100vh, 920px); overflow: hidden; display: grid; grid-template-columns: 1fr 1.1fr .23fr; align-items: center; padding: 100px 7.2% 76px; background: radial-gradient(ellipse at 66% 57%, #1b1914 0%, #0c0c0a 39%, #090908 74%); }
-.hero::before { content: ""; position: absolute; inset: 0; opacity: .2; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.012) 3px); pointer-events: none; }
-.hero-grain { position: absolute; inset: 0; z-index: 0; opacity: .16; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.21'/%3E%3C/svg%3E"); pointer-events: none; }
-.hero-copy { z-index: 2; position: relative; padding-bottom: 10px; }
+.hero { position: relative; isolation: isolate; min-height: 100vh; min-height: 100svh; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; padding: 100px 10% 76px; background: #090908; }
+.hero-video { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(7,7,6,.8) 0%, rgba(7,7,6,.58) 36%, rgba(7,7,6,.16) 76%, rgba(7,7,6,.28) 100%), linear-gradient(0deg, rgba(7,7,6,.5), transparent 24%, transparent 75%, rgba(7,7,6,.25)); pointer-events: none; }
+.hero-grain { position: absolute; inset: 0; z-index: 0; opacity: .1; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.21'/%3E%3C/svg%3E"); pointer-events: none; }
+.hero-copy { z-index: 2; position: relative; width: min(700px, 82vw); padding-bottom: 10px; }
 .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--gold); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; }
 .eyebrow-line { display: inline-block; width: 30px; height: 1px; background: var(--gold); }
 .hero h1,.section-heading h2,.manifesto h2,.ritual h2 { margin: 32px 0 0; font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
@@ -39,32 +40,7 @@ button { color: inherit; font: inherit; }
 .text-link { display: inline-flex; align-items: center; gap: 24px; padding-bottom: 9px; border-bottom: 1px solid rgba(201,169,110,.55); color: var(--cream); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; transition: color .2s ease, gap .2s ease; }
 .text-link span,.all-products-link span { color: var(--gold); font-size: 15px; }
 .text-link:hover { gap: 32px; color: var(--gold-light); }
-.hero-art { height: 100%; position: relative; display: grid; place-items: center; perspective: 1000px; }
-.hero-glow { position: absolute; width: 55%; height: 24%; bottom: 15%; border-radius: 50%; background: rgba(199,157,81,.12); filter: blur(55px); }
-.smoke { position: absolute; pointer-events: none; border-radius: 50%; filter: blur(20px); opacity: 0; mix-blend-mode: screen; animation: drift 10s ease-in-out infinite; }
-.smoke-one { width: 88%; height: 55%; top: 12%; left: 5%; background: radial-gradient(ellipse at 42% 52%, rgba(191,188,179,.48), rgba(125,125,124,.24) 42%, transparent 73%); }
-.smoke-two { width: 88%; height: 46%; top: 25%; left: 13%; background: radial-gradient(ellipse at 52% 48%, rgba(161,157,148,.38), rgba(122,122,122,.18) 45%, transparent 70%); animation-delay: -3s; }
-.smoke-three { width: 70%; height: 44%; top: 8%; left: 17%; background: radial-gradient(ellipse at 49% 52%, rgba(207,203,193,.34), transparent 68%); animation-delay: -6s; }
-.bottle-animate { animation: bottleFloat 6s ease-in-out infinite; }
-.hero-bottle { position: relative; z-index: 2; width: clamp(170px, 20vw, 250px); height: 410px; display: flex; align-items: center; flex-direction: column; filter: drop-shadow(0 30px 30px rgba(0,0,0,.75)); }
-.bottle-cap { position: relative; width: 78px; height: 65px; margin-bottom: -2px; border: 1px solid rgba(232,206,149,.6); border-radius: 5px 5px 3px 3px; background: linear-gradient(90deg,#4d3a1c,#d3b675 22%,#856a39 43%,#e0c889 63%,#5c4728); box-shadow: inset 4px 0 9px rgba(255,255,255,.13), inset -5px 0 8px rgba(0,0,0,.35), 0 7px 13px rgba(0,0,0,.5); }
-.bottle-cap::before { content: ""; position: absolute; left: -5px; right: -5px; top: 6px; height: 4px; background: linear-gradient(90deg,#78603b,#e2cb97,#65502d); }
-.bottle-cap span { display: block; height: 100%; width: 1px; background: rgba(255,244,206,.42); margin: auto; }
-.bottle-neck { width: 55px; height: 35px; background: linear-gradient(90deg,#28251e,#a08754 24%,#373024 49%,#b19a69 75%,#24221c); border: 1px solid rgba(201,169,110,.28); }
-.bottle-body { position: relative; width: 100%; height: 294px; overflow: hidden; border: 1px solid rgba(204,175,111,.54); border-radius: 22px 22px 29px 29px; background: linear-gradient(90deg,rgba(14,14,12,.99) 0%,rgba(32,29,22,.94) 13%,rgba(9,9,8,.98) 33%,rgba(20,18,15,.97) 68%,rgba(47,39,25,.85) 88%,rgba(12,12,10,.98) 100%); box-shadow: inset 8px 0 20px rgba(234,207,154,.08), inset -12px 0 20px rgba(0,0,0,.8), inset 0 -18px 22px rgba(0,0,0,.5), 0 0 20px rgba(211,172,100,.07); }
-.bottle-body::before { content: ""; position: absolute; top: -10px; left: 8%; width: 84%; height: 26px; border: 1px solid rgba(214,185,125,.47); border-radius: 50%; background: linear-gradient(180deg,#c2a466,#29241a); }
-.bottle-reflection { position: absolute; inset: 9px auto 15px 10px; width: 10px; border-radius: 50%; background: linear-gradient(180deg,transparent,rgba(229,207,159,.22) 25%,rgba(255,255,255,.04) 68%,transparent); filter: blur(4px); }
-.bottle-label { position: absolute; inset: 64px 0 auto; height: 142px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-top: 1px solid rgba(201,169,110,.28); border-bottom: 1px solid rgba(201,169,110,.28); background: linear-gradient(90deg,rgba(14,13,11,.32),rgba(12,11,10,.8) 30%,rgba(12,11,10,.78) 70%,rgba(14,13,11,.3)); color: #d2b473; }
-.label-mark { font-family: var(--serif); font-size: 31px; line-height: 1; }
-.label-name { margin-top: 3px; font-size: 13px; letter-spacing: .2em; }
-.label-fragrance { margin-top: 13px; color: #f1eadb; font-size: 8px; letter-spacing: .28em; }
-.label-detail { margin-top: 8px; color: #a89978; font-size: 5px; letter-spacing: .16em; }
-.bottle-base { position: absolute; right: 12%; bottom: 10px; left: 12%; height: 1px; background: rgba(219,189,128,.2); }
-.hero-product-note { position: absolute; bottom: 12%; right: -3%; display: flex; gap: 18px; align-items: center; color: #b6ac94; font-size: 8px; letter-spacing: .18em; writing-mode: vertical-rl; }
-.hero-product-note span:first-child { color: var(--gold); }
-.hero-aside { display: flex; align-items: center; justify-content: center; gap: 15px; writing-mode: vertical-rl; color: #807b70; font-size: 8px; letter-spacing: .2em; }
-.aside-rule { display: block; height: 48px; width: 1px; background: var(--gold); }
-.scroll-cue { position: absolute; bottom: 34px; left: 7.2%; display: flex; gap: 11px; align-items: center; color: #8e897e; font-size: 8px; letter-spacing: .16em; text-transform: uppercase; }
+.scroll-cue { z-index: 2; position: absolute; bottom: 34px; left: 50%; display: flex; gap: 11px; align-items: center; color: #e2dccd; font-size: 8px; letter-spacing: .16em; text-transform: uppercase; transform: translateX(-50%); }
 .scroll-cue span { display: inline-block; width: 1px; height: 32px; background: var(--gold); transform-origin: top; animation: scrollPulse 1.8s ease-in-out infinite; }
 
 .section-wrap { padding-right: 10%; padding-left: 10%; }
@@ -164,8 +140,6 @@ dialog.cart-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blu
 .cart-note { margin: 9px 0 18px; color: #8f8a80; font-size: 8px; }
 .cart-instagram { width: 100%; justify-content: space-between; }
 
-@keyframes bottleFloat { 0%,100% { transform: translateY(0) rotateY(-4deg); } 50% { transform: translateY(-12px) rotateY(4deg); } }
-@keyframes drift { 0%,100% { transform: translate3d(-8px,15px,0) scale(.88); opacity: .2; } 50% { transform: translate3d(14px,-18px,0) scale(1.12); opacity: .82; } }
 @keyframes scrollPulse { 0%,100% { transform: scaleY(.55); opacity: .45; } 50% { transform: scaleY(1); opacity: 1; } }
 
 @media (min-width: 1500px) {
@@ -177,9 +151,8 @@ dialog.cart-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blu
 @media (max-width: 900px) {
   .site-header { padding: 0 5%; }
   .main-nav { gap: 24px; margin-left: 0; }
-  .hero { min-height: 680px; height: 92vh; grid-template-columns: .9fr 1fr 20px; padding-right: 5%; padding-left: 5%; }
+  .hero { padding-right: 7%; padding-left: 7%; }
   .hero h1 { font-size: clamp(62px, 9vw, 86px); }
-  .hero-bottle { transform: scale(.86); }
   .section-wrap { padding-right: 7%; padding-left: 7%; }
   .product-grid { gap: 16px; }
   .manifesto-copy { padding-right: 8%; padding-left: 8%; }
@@ -196,22 +169,14 @@ dialog.cart-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blu
   .main-nav.is-open { max-height: 240px; }
   .main-nav a { padding: 16px 0; border-top: 1px solid rgba(201,169,110,.12); }
   .bag-link { font-size: 8px; }
-  .hero { min-height: 760px; height: auto; display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 124px 7% 70px; }
-  .hero-copy { text-align: center; }
+  .hero { min-height: 100svh; height: 100svh; align-items: center; padding: 100px 7% 76px; }
+  .hero::before { background: radial-gradient(ellipse at center, rgba(7,7,6,.62), rgba(7,7,6,.42) 54%, transparent 86%), linear-gradient(90deg, rgba(7,7,6,.76), rgba(7,7,6,.34)), linear-gradient(0deg, rgba(7,7,6,.48), transparent 30%, rgba(7,7,6,.18)); }
+  .hero-copy { width: 100%; text-align: center; }
   .hero-copy .eyebrow { justify-content: center; font-size: 7px; }
   .hero h1 { margin-top: 24px; font-size: clamp(66px, 17vw, 90px); }
   .hero-description { margin: 20px 0 19px; font-size: 11px; }
   .hero-copy .text-link { font-size: 8px; }
-  .hero-art { min-height: 315px; margin-top: -4px; }
-  .hero-bottle { width: 150px; height: 285px; transform: scale(.72); transform-origin: center center; }
-  .bottle-body { height: 205px; }
-  .bottle-cap { width: 60px; height: 48px; }
-  .bottle-neck { width: 44px; height: 27px; }
-  .bottle-label { top: 43px; height: 108px; }
-  .label-mark { font-size: 25px; }
-  .label-name { font-size: 10px; }
-  .hero-product-note { right: 8%; bottom: 8%; font-size: 6px; }
-  .hero-aside,.scroll-cue { display: none; }
+  .scroll-cue { bottom: 24px; font-size: 7px; }
   .section-wrap { padding-right: 7%; padding-left: 7%; }
   .collection { padding-top: 76px; padding-bottom: 72px; }
   .section-heading { display: block; margin-bottom: 33px; }

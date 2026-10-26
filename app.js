@@ -8,6 +8,7 @@ const cartEmpty = document.querySelector(".cart-empty");
 const cartFooter = document.querySelector(".cart-footer");
 const cartSubtotal = document.querySelector(".cart-subtotal strong");
 const cartClose = document.querySelector(".cart-close");
+const heroVideo = document.querySelector(".hero-video");
 
 const products = {
   "noir-absolu": { name: "Noir Absolu", notes: "Ámbar · Cedro · Vainilla", price: 2450, style: "mini-noir" },
@@ -15,6 +16,10 @@ const products = {
   "oud-sauvage": { name: "Oud Sauvage", notes: "Oud · Azafrán · Incienso", price: 2850, style: "mini-oud" },
 };
 const cart = new Map();
+
+if (heroVideo instanceof HTMLVideoElement && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  heroVideo.pause();
+}
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
