@@ -33,9 +33,9 @@ button { color: inherit; font: inherit; }
 .hero-copy { z-index: 2; position: relative; width: min(700px, 82vw); padding-bottom: 10px; }
 .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--gold); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; }
 .eyebrow-line { display: inline-block; width: 30px; height: 1px; background: var(--gold); }
-.hero h1,.section-heading h2,.manifesto h2,.ritual h2 { margin: 32px 0 0; font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
+.hero h1,.section-heading h2 { margin: 32px 0 0; font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
 .hero h1 { font-size: clamp(66px, 7.2vw, 108px); line-height: .84; }
-.hero h1 em,.section-heading h2 em,.manifesto h2 em,.ritual h2 em { color: var(--gold-light); font-weight: 400; }
+.hero h1 em,.section-heading h2 em { color: var(--gold-light); font-weight: 400; }
 .hero-description { margin: 31px 0 30px; color: #a5a198; font-size: 12px; line-height: 1.9; letter-spacing: .025em; }
 .text-link { display: inline-flex; align-items: center; gap: 24px; padding-bottom: 9px; border-bottom: 1px solid rgba(201,169,110,.55); color: var(--cream); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; transition: color .2s ease, gap .2s ease; }
 .text-link span { color: var(--gold); font-size: 15px; }
@@ -46,7 +46,7 @@ button { color: inherit; font: inherit; }
 .section-wrap { padding-right: 10%; padding-left: 10%; }
 .collection { padding-top: 128px; padding-bottom: 120px; background: #0d0d0b; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 58px; }
-.section-heading h2,.manifesto h2,.ritual h2 { font-size: clamp(43px,5.2vw,67px); line-height: .99; }
+.section-heading h2 { font-size: clamp(43px,5.2vw,67px); line-height: .99; }
 .section-heading .eyebrow { margin-bottom: 23px; }
 .section-intro { max-width: 290px; margin: 0 0 5px; color: #928e84; font-size: 11px; line-height: 1.9; }
 .product-grid { display: grid; grid-template-columns: minmax(0,1fr); max-width: 980px; margin: 0 auto; }
@@ -71,23 +71,8 @@ button { color: inherit; font: inherit; }
 .add-button span { color: var(--gold); font-size: 17px; }
 .add-button:hover { color: var(--gold-light); }
 
-.manifesto { display: grid; grid-template-columns: 1fr 1fr; min-height: 540px; background: #14130f; }
-.manifesto-image { min-height: 520px; position: relative; overflow: hidden; background: radial-gradient(ellipse at 57% 53%,rgba(198,151,77,.24),transparent 20%), radial-gradient(ellipse at 58% 58%,rgba(135,93,40,.16),transparent 48%), linear-gradient(125deg,#1a1712,#30261b 45%,#12110e 100%); }
-.manifesto-image::before { content: ""; position: absolute; inset: -20%; opacity: .65; background: repeating-linear-gradient(115deg,transparent 0 65px,rgba(226,191,127,.035) 67px,transparent 70px 112px); transform: rotate(-7deg); }
-.manifesto-image::after { content: ""; position: absolute; width: 50%; height: 82%; top: 8%; left: 26%; border: 1px solid rgba(219,184,115,.15); background: linear-gradient(105deg,rgba(255,240,190,.035),transparent 34%,rgba(0,0,0,.48) 75%); clip-path: polygon(26% 0,74% 0,100% 14%,100% 89%,74% 100%,26% 100%,0 89%,0 14%); }
-.manifesto-copy { position: relative; align-self: center; padding: 82px 12% 82px 12%; }
-.manifesto-copy .eyebrow { margin-bottom: 24px; }
-.manifesto h2 { margin-top: 0; }
-.manifesto-copy > p:not(.eyebrow) { max-width: 405px; margin: 27px 0 30px; color: #989388; font-size: 11px; line-height: 2; }
-.manifesto-signature { position: absolute; right: 12%; bottom: 10px; color: rgba(201,169,110,.16); font: italic 150px var(--serif); }
-
-.ritual { min-height: 465px; position: relative; padding-top: 104px; padding-bottom: 104px; text-align: center; background: radial-gradient(ellipse at 50% 100%,#211c12,transparent 56%),#0b0b09; }
-.ritual .eyebrow { justify-content: center; }
-.ritual h2 { margin-top: 25px; }
-.ritual-description { margin: 19px 0 26px; color: #969186; font-size: 11px; letter-spacing: .06em; }
 .button-gold { display: inline-flex; align-items: center; gap: 30px; padding: 14px 20px; border: 1px solid rgba(201,169,110,.65); color: var(--gold-light); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
 .button-gold:hover { background: var(--gold); color: #111; }
-.ritual-index { position: absolute; bottom: 27px; left: 10%; color: #68645a; font-size: 8px; letter-spacing: .2em; }
 
 .contact-section { padding-top: 90px; padding-bottom: 95px; text-align: center; background: #11110f; }
 .contact-section .eyebrow { justify-content: center; }
@@ -148,7 +133,6 @@ dialog.cart-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blu
   .section-wrap { padding-right: 7%; padding-left: 7%; }
   .product-card { grid-template-columns: minmax(0,1.1fr) minmax(220px,.9fr); gap: 26px; }
   .product-gallery { grid-template-columns: 54px minmax(0,1fr); gap: 10px; }
-  .manifesto-copy { padding-right: 8%; padding-left: 8%; }
 }
 
 @media (max-width: 640px) {
@@ -174,7 +158,7 @@ dialog.cart-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blu
   .collection { padding-top: 76px; padding-bottom: 72px; }
   .section-heading { display: block; margin-bottom: 33px; }
   .section-heading .eyebrow { margin-bottom: 18px; }
-  .section-heading h2,.manifesto h2,.ritual h2 { font-size: 49px; }
+  .section-heading h2 { font-size: 49px; }
   .section-intro { margin-top: 20px; font-size: 10px; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card { grid-template-columns: 1fr; gap: 25px; }
@@ -184,20 +168,36 @@ dialog.cart-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blu
   .product-visual { height: min(100vw, 440px); min-height: 320px; }
   .product-info { padding-top: 16px; }
   .product-info h3 { font-size: 26px; }
-  .manifesto { grid-template-columns: 1fr; }
-  .manifesto-image { min-height: 300px; }
-  .manifesto-copy { padding: 57px 8% 78px; }
-  .manifesto-copy > p:not(.eyebrow) { font-size: 10px; }
-  .manifesto-signature { font-size: 110px; }
-  .ritual { min-height: 400px; padding-top: 83px; padding-bottom: 83px; }
-  .ritual-description { font-size: 9px; }
-  .ritual-index { left: 7%; }
   .site-footer { padding: 36px 7% 20px; }
   .footer-bottom { gap: 13px; flex-wrap: wrap; font-size: 7px; }
   .footer-bottom span:nth-child(2) { display: none; }
   .contact-section { padding-top: 73px; padding-bottom: 78px; }
   .contact-section h2 { font-size: 47px; }
   dialog.cart-dialog { padding: 27px 22px 20px; }
+}
+
+@media (min-width: 901px) {
+  .main-nav a,.bag-link { font-size: 12px; }
+  .bag-count { font-size: 11px; }
+  .eyebrow { font-size: 11px; }
+  .hero-description { font-size: 15px; }
+  .text-link,.button-gold { font-size: 12px; }
+  .scroll-cue { font-size: 10px; }
+  .section-intro { font-size: 13px; }
+  .visual-caption,.product-badge { font-size: 9px; }
+  .product-info p { font-size: 11px; }
+  .product-price { font-size: 12px; }
+  .add-button { font-size: 11px; }
+  .contact-section > p:not(.eyebrow) { font-size: 13px; }
+  .footer-bottom { font-size: 10px; }
+  .toast { font-size: 12px; }
+  .cart-header .eyebrow { font-size: 10px; }
+  .cart-empty span { font-size: 12px; }
+  .cart-item-details p { font-size: 10px; }
+  .cart-item-details > strong { font-size: 12px; }
+  .cart-item-controls span { font-size: 11px; }
+  .cart-remove,.cart-note { font-size: 10px; }
+  .cart-subtotal { font-size: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
